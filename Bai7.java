@@ -1,4 +1,4 @@
-package baitapjava10;
+package baitapjava_32;
 
 import java.util.Scanner;
 
@@ -6,34 +6,72 @@ public class Bai7 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Scanner scanner = new Scanner(System.in); 
+		 Scanner input = new Scanner(System.in);
 
-		float timeSeconds;
-		float mps,kph, mph;
+	        int number_Of_DaysInMonth = 0; 
+	        String MonthOfName = "Unknown";
 
-		System.out.print("Input distance in meters: ");
-		float distance = scanner.nextFloat();
+	        System.out.print("Input a month number: ");
+	        int month = input.nextInt();
 
-		System.out.print("Input hour: ");
-		float hr = scanner.nextFloat();
+	        System.out.print("Input a year: ");
+	        int year = input.nextInt();
 
-		System.out.print("Input minutes: ");
-		float min = scanner.nextFloat();
-
-		System.out.print("Input seconds: ");
-		float sec = scanner.nextFloat();
-
-		timeSeconds = (hr*3600) + (min*60) + sec;
-		mps = distance / timeSeconds;
-		kph = ( distance/1000.0f ) / ( timeSeconds/3600.0f );
-		mph = kph / 1.609f;
-
-		System.out.println("Your speed in meters/second is "+mps);
-		System.out.println("Your speed in km/h is "+kph);
-		System.out.println("Your speed in miles/h is "+mph);
-		
-
-		scanner.close();
-		}
+	        switch (month) {
+	            case 1:
+	                MonthOfName = "January";
+	                number_Of_DaysInMonth = 31;
+	                break;
+	            case 2:
+	                MonthOfName = "February";
+	                if ((year % 400 == 0) || ((year % 4 == 0) && (year % 100 != 0))) {
+	                    number_Of_DaysInMonth = 29;
+	                } else {
+	                    number_Of_DaysInMonth = 28;
+	                }
+	                break;
+	            case 3:
+	                MonthOfName = "March";
+	                number_Of_DaysInMonth = 31;
+	                break;
+	            case 4:
+	                MonthOfName = "April";
+	                number_Of_DaysInMonth = 30;
+	                break;
+	            case 5:
+	                MonthOfName = "May";
+	                number_Of_DaysInMonth = 31;
+	                break;
+	            case 6:
+	                MonthOfName = "June";
+	                number_Of_DaysInMonth = 30;
+	                break;
+	            case 7:
+	                MonthOfName = "July";
+	                number_Of_DaysInMonth = 31;
+	                break;
+	            case 8:
+	                MonthOfName = "August";
+	                number_Of_DaysInMonth = 31;
+	                break;
+	            case 9:
+	                MonthOfName = "September";
+	                number_Of_DaysInMonth = 30;
+	                break;
+	            case 10:
+	                MonthOfName = "October";
+	                number_Of_DaysInMonth = 31;
+	                break;
+	            case 11:
+	                MonthOfName = "November";
+	                number_Of_DaysInMonth = 30;
+	                break;
+	            case 12:
+	                MonthOfName = "December";
+	                number_Of_DaysInMonth = 31;
+	        }
+	        System.out.print(MonthOfName + " " + year + " has " + number_Of_DaysInMonth + " days\n");
+	    }
+	}
 
 }
